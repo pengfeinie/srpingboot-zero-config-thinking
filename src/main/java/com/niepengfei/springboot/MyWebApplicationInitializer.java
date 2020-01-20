@@ -26,7 +26,6 @@ public class MyWebApplicationInitializer implements WebApplicationInitializer {
         // Create and register the DispatcherServlet
         DispatcherServlet servlet = new DispatcherServlet(ac);
         ServletRegistration.Dynamic registration = servletCxt.addServlet("app", servlet);
-        ac.refresh();
         registration.setLoadOnStartup(1);
         registration.addMapping("/");
     }

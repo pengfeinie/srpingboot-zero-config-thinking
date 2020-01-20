@@ -3,3 +3,4 @@
 /*.iml
 /target/classes/com/niepengfei/springboot/*.class
 /target/classes/com/niepengfei/springboot/controller/*.class
+/target
