@@ -25,7 +25,7 @@ public class SpringApplication {
         try{
             Tomcat tomcat = new Tomcat();
             //File file = new File(System.getProperty("java.io.tmpdir"));
-            //tomcat.addWebapp("/",file.getAbsolutePath());
+
 
             Server server = tomcat.getServer();
             Service service = server.findService("Tomcat");
@@ -49,7 +49,7 @@ public class SpringApplication {
 
             service.setContainer(engine);
             service.addConnector(connector);
-
+            //tomcat.addWebapp("/",file.getAbsolutePath());
             AnnotationConfigWebApplicationContext ac = new AnnotationConfigWebApplicationContext();
             ac.register(AppConfig.class);
             DispatcherServlet servlet = new DispatcherServlet(ac);
@@ -59,9 +59,6 @@ public class SpringApplication {
             registration.addMapping("/");
 
             tomcat.start();
-
-
-
             tomcat.getServer().await();
         } catch (Exception e){
             System.out.println(e);
